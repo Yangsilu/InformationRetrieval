@@ -4,6 +4,7 @@ import ir.assignments.one.a.Frequency;
 import ir.assignments.one.a.Utilities;
 
 import java.io.*;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -92,9 +93,14 @@ public final class WordFrequencyCounter {
 //		boolean check=Utilities.IsPali("   s i lu lis");
 		
 		 File file = new File(args[0]);
+		 
 //		 String filePath = "/Users/silu/Documents/Reddit_data/221te";
 //		 File fin = new File(filePath);
-		
+		 if (!file.exists()) {
+			  // file is not exist
+			 System.out.println("File not found");
+			 System.exit(0);
+	   	 }
 		ArrayList<String> words = Utilities.tokenizeFile(file);
  		ArrayList<Frequency> frequencies = computeWordFrequencies(words);
 		Utilities.printFrequencies(frequencies);

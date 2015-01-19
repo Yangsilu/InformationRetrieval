@@ -49,6 +49,7 @@ public class PalindromeFrequencyCounter {
 		// You will likely want to create helper methods / classes to help implement this functionality
 		ArrayList<String> PaliList=new ArrayList<String>();
 		int flag=0;
+		//comlexity O(n^3)
 		for(int i=0;i<words.size();i++){
 			for(int j=i;j<words.size();j++){
 				String tmp="";
@@ -79,6 +80,13 @@ public class PalindromeFrequencyCounter {
 	 */
 	public static void main(String[] args) throws IOException {
 		File file = new File(args[0]);
+		
+		if (!file.exists()) {
+			  // file is not exist
+			 System.out.println("File not found");
+			 System.exit(0);
+	   	 }
+		
 		ArrayList<String> words = Utilities.tokenizeFile(file);
 //		ArrayList<Frequency> l=new ArrayList<Frequency>();
 //		System.out.println(l.size());

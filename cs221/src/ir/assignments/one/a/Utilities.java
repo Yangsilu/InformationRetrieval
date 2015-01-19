@@ -2,6 +2,7 @@ package ir.assignments.one.a;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.StringTokenizer;
 
@@ -56,7 +57,7 @@ public class Utilities {
 	}
 	
 	public static boolean IsPali(String word){
-		
+		//complexity O(n)
 		int left,right;
 		left=0;
 		right=word.length()-1;
@@ -139,6 +140,8 @@ public class Utilities {
 			System.out.println("\nTotal item count: "+sum);
 			System.out.println("Unique item count: "+frequencies.size()+"\n");
 		}
+		
+		Collections.sort(frequencies, new Frequency.CompFreq());
 		
 		
 		for(int i=0;i<frequencies.size();i++){

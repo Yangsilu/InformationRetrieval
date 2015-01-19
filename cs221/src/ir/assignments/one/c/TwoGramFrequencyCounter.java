@@ -2,7 +2,6 @@ package ir.assignments.one.c;
 
 import ir.assignments.one.a.Frequency;
 import ir.assignments.one.a.Utilities;
-
 import ir.assignments.one.b.WordFrequencyCounter;
 
 import java.io.File;
@@ -74,6 +73,11 @@ public final class TwoGramFrequencyCounter {
 	 */
 	public static void main(String[] args) throws IOException {
 		File file = new File(args[0]);
+		if (!file.exists()) {
+			  // file is not exist
+			 System.out.println("File not found");
+			 System.exit(0);
+	   	 }
 		ArrayList<String> words = Utilities.tokenizeFile(file);
 
 		ArrayList<Frequency> frequencies = computeTwoGramFrequencies(words);

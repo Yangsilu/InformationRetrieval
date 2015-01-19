@@ -1,5 +1,7 @@
 package ir.assignments.one.a;
 
+import java.util.Comparator;
+
 /**
  * Basic class for pairing a word/2-gram/palindrome with its frequency.
  * 
@@ -8,6 +10,16 @@ package ir.assignments.one.a;
 public final class Frequency {
 	private final String word;
 	private int frequency;
+	
+	public static class CompFreq implements Comparator<Frequency> {
+        @Override
+        public int compare(Frequency arg0, Frequency arg1) {
+            return -arg0.frequency + arg1.frequency;
+        }
+    }
+	
+	
+	
 	
 	public Frequency(String word) {
 		this.word = word;
