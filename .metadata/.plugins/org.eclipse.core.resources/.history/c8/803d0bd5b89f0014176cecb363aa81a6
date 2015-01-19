@@ -48,8 +48,7 @@ public final class TwoGramFrequencyCounter {
 	private static ArrayList<Frequency> computeTwoGramFrequencies(ArrayList<String> words) {
 		// TODO Write body!
 		//convert list to 2gram list;
-		ArrayList<Frequency> Twofrequencies=new ArrayList<Frequency>();
-		if (words.size()==0) return Twofrequencies;
+		if (words.size()==0) return null;
 
 		ArrayList<String> Twowords=new ArrayList<String>();
 		
@@ -59,7 +58,7 @@ public final class TwoGramFrequencyCounter {
 			
 		}
 		//todo: use 1-word counter
-		Twofrequencies = WordFrequencyCounter.computeWordFrequencies( Twowords);
+		ArrayList<Frequency> Twofrequencies = WordFrequencyCounter.computeWordFrequencies( Twowords);
 		
 		
 		
